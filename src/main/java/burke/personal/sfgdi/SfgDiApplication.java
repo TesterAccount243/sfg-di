@@ -1,5 +1,8 @@
 package burke.personal.sfgdi;
 
+import burke.personal.sfgdi.config.PropertiesConfig;
+import burke.personal.sfgdi.config.Tester;
+import burke.personal.sfgdi.config.Testy;
 import burke.personal.sfgdi.controllers.ConstructorInjection;
 import burke.personal.sfgdi.controllers.MyController;
 import burke.personal.sfgdi.controllers.PropertyInjectedController;
@@ -33,6 +36,14 @@ public class SfgDiApplication {
 		ConstructorInjection constructorInjection = ctx.getBean(ConstructorInjection.class);
 		System.out.println(constructorInjection.sayHello());
 
+		System.out.println("Conf ------------------------");
+		Tester t = ctx.getBean(Tester.class);
+		System.out.println(t.getTest());
+		System.out.println(t.getUser());
+
+		Testy ts = ctx.getBean(Testy.class);
+		System.out.println(ts.getUser());
+		System.out.println(ts.getPassword());
 	}
 
 }
